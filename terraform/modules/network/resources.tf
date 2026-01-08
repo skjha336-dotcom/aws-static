@@ -28,7 +28,7 @@ resource "aws_subnet" "subnet_public" {
   availability_zone = "${var.availability_zone}"
   tags {
     Environment = "${var.environment_tag}"
-    "Type" = "Public"
+    Type = "Public"
   }
 }
 
@@ -41,7 +41,7 @@ resource "aws_route_table" "rtb_public" {
   }
 
   tags {
-    "Environment" = "${var.environment_tag}"
+    Environment = "${var.environment_tag}"
   }
 }
 
