@@ -9,14 +9,14 @@ resource "aws_vpc" "vpc" {
   cidr_block = "${var.cidr_block_range}"
   enable_dns_support   = true
   enable_dns_hostnames = true
-  tags {
+  tags = {
     Environment = var.environment_tag
   }
 }
 
 resource "aws_internet_gateway" "igw" {
   vpc_id = "${aws_vpc.vpc.id}"
-  tags {
+  tags =  {
     Environment = "${var.environment_tag}"
   }
 }
@@ -40,7 +40,7 @@ resource "aws_route_table" "rtb_public" {
       gateway_id = "${aws_internet_gateway.igw.id}"
   }
 
-  tags {
+  tags = {
     Environment = "${var.environment_tag}"
   }
 }
