@@ -1,13 +1,25 @@
-# Variables for the network module
-
 variable "region" {
-  type    = string
-  default = "us-east-2"
+  description = "AWS region"
+  type        = string
+  default     = "us-east-2"
 }
 
 variable "availability_zone" {
-  type    = string
-  default = "us-east-2a"
+  description = "Availability zone to place resources in"
+  type        = string
+  default     = "us-east-2a"
+}
+
+variable "environment_tag" {
+  description = "Environment tag"
+  type        = string
+  default     = "dev"
+}
+
+variable "domain_name" {
+  description = "Base domain name for DNS module"
+  type        = string
+  default     = "example.com"
 }
 
 variable "cidr_block_range" {
@@ -28,14 +40,14 @@ variable "subnet2_cidr_block_range" {
   default     = "10.2.0.0/24"
 }
 
-variable "environment_tag" {
-  description = "Environment tag"
-  type        = string
-  default     = ""
-}
-
 variable "public_key_path" {
   description = "Public key path"
   type        = string
   default     = "~/.ssh/id_rsa.pub"
+}
+
+variable "aws_profile" {
+  description = "Optional AWS CLI profile to use (empty = default credential chain)"
+  type        = string
+  default     = ""
 }
