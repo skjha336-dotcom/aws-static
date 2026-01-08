@@ -23,7 +23,7 @@ resource "aws_security_group" "sg_22" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags {
+  tags = {
     Environment = "${var.environment_tag}"
   }
 }
@@ -46,7 +46,7 @@ resource "aws_security_group" "sg_80" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags {
+  tags = {
     Environment = var.environment_tag
   }
 }
