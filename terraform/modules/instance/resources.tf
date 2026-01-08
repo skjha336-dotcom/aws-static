@@ -21,6 +21,6 @@ resource "aws_eip" "testInstanceEip" {
   instance  = "${aws_instance.instance.id}"
 
   tags {
-    "Environment" = "${var.environment_tag}"
+    Environment = "${var.environment_tag}"
   }
 }
