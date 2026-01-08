@@ -12,7 +12,7 @@ resource "aws_instance" "instance" {
   key_name = "${var.key_pair_name}"
 
   tags {
-		"Environment" = var.environment_tag
+		Environment = var.environment_tag
 	}
 }
 
