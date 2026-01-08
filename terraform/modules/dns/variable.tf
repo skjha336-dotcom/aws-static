@@ -9,11 +9,11 @@ variable "domain_name" {
   default = ""
 }
 variable "aRecords" {
-  type = "list"
+  type = list(string)
   default = []
 }
 variable "cnameRecords" {
-  type = "list"
+  type = list(string)
   default = []
 }
 variable "ttl" {
